@@ -10,6 +10,9 @@ public class GeraeteListe {
 		geraeteListe.add(geraet);
 	}
 	public void entfernen(Geraet geraet) {
+		if(geraeteListe.contains(geraet) == false){
+			throw new NoSuchGeraetException(geraet + " not found");
+		}
 		geraeteListe.remove(geraet);
 	}
 	public int getAnzahlGeraete() {
